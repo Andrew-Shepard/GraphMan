@@ -1,0 +1,3 @@
+C:\Users\andre\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5080.54\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\GraphMan.dir/objects.a
+C:\Users\andre\Development\minGW\mingw64\bin\ar.exe cr CMakeFiles\GraphMan.dir/objects.a @CMakeFiles\GraphMan.dir\objects1.rsp
+C:\Users\andre\Development\minGW\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\GraphMan.dir/objects.a -Wl,--no-whole-archive -o GraphMan.exe -Wl,--out-implib,libGraphMan.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\GraphMan.dir\linklibs.rsp

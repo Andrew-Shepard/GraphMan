@@ -1,0 +1,3 @@
+C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir
+C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/rebuild_cache.dir
