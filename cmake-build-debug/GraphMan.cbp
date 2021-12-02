@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/main.cpp">
-			<Option target="GraphMan"/>
-		</Unit>
 		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/src/Edge.cpp">
 			<Option target="GraphMan"/>
 		</Unit>
@@ -105,6 +102,9 @@
 			<Option target="GraphMan"/>
 		</Unit>
 		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h">
+			<Option target="GraphMan"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/src/main.cpp">
 			<Option target="GraphMan"/>
 		</Unit>
 		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/CMakeLists.txt">

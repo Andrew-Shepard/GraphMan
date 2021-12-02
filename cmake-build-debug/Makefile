@@ -128,30 +128,6 @@ GraphMan/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/build
 .PHONY : GraphMan/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 src/Edge.obj: src/Edge.cpp.obj
 .PHONY : src/Edge.obj
 
@@ -248,6 +224,30 @@ src/Vertex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/src/Vertex.cpp.s
 .PHONY : src/Vertex.cpp.s
 
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphMan.dir\build.make CMakeFiles/GraphMan.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -257,9 +257,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GraphMan
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
 	@echo ... src/Edge.obj
 	@echo ... src/Edge.i
 	@echo ... src/Edge.s
@@ -272,6 +269,9 @@ help:
 	@echo ... src/Vertex.obj
 	@echo ... src/Vertex.i
 	@echo ... src/Vertex.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 

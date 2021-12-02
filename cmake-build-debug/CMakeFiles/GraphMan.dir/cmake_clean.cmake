@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/GraphMan.dir/main.cpp.obj"
   "CMakeFiles/GraphMan.dir/src/Edge.cpp.obj"
   "CMakeFiles/GraphMan.dir/src/Graph.cpp.obj"
   "CMakeFiles/GraphMan.dir/src/GraphMan.cpp.obj"
   "CMakeFiles/GraphMan.dir/src/Vertex.cpp.obj"
+  "CMakeFiles/GraphMan.dir/src/main.cpp.obj"
   "GraphMan.exe"
   "GraphMan.exe.manifest"
   "GraphMan.pdb"

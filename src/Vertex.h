@@ -8,11 +8,23 @@
 
 #include <string>
 #include <vector>
-#include "Edge.h"
 
+class Edge;
 class Vertex {
     std::string name;
-    std::vector<Edge*> source_of_edge;
+public:
+    std::vector<Edge*> edges;
+    const std::string &getName() const {
+        return name;
+    }
+
+    void setName(const std::string &name) {
+        Vertex::name = name;
+    }
+
+    Vertex(std::string name){
+        this->name = name;
+    }
 };
 
 

@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/andre/CLionProjects/GraphMan/main.cpp" "C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir/main.cpp.obj"
   "C:/Users/andre/CLionProjects/GraphMan/src/Edge.cpp" "C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir/src/Edge.cpp.obj"
   "C:/Users/andre/CLionProjects/GraphMan/src/Graph.cpp" "C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir/src/Graph.cpp.obj"
   "C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.cpp" "C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir/src/GraphMan.cpp.obj"
   "C:/Users/andre/CLionProjects/GraphMan/src/Vertex.cpp" "C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir/src/Vertex.cpp.obj"
+  "C:/Users/andre/CLionProjects/GraphMan/src/main.cpp" "C:/Users/andre/CLionProjects/GraphMan/cmake-build-debug/CMakeFiles/GraphMan.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

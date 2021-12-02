@@ -65,18 +65,18 @@ include CMakeFiles/GraphMan.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GraphMan.dir/flags.make
 
-CMakeFiles/GraphMan.dir/main.cpp.obj: CMakeFiles/GraphMan.dir/flags.make
-CMakeFiles/GraphMan.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\andre\CLionProjects\GraphMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GraphMan.dir/main.cpp.obj"
-	C:\Users\andre\Development\minGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\GraphMan.dir\main.cpp.obj -c C:\Users\andre\CLionProjects\GraphMan\main.cpp
+CMakeFiles/GraphMan.dir/src/main.cpp.obj: CMakeFiles/GraphMan.dir/flags.make
+CMakeFiles/GraphMan.dir/src/main.cpp.obj: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\andre\CLionProjects\GraphMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GraphMan.dir/src/main.cpp.obj"
+	C:\Users\andre\Development\minGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\GraphMan.dir\src\main.cpp.obj -c C:\Users\andre\CLionProjects\GraphMan\src\main.cpp
 
-CMakeFiles/GraphMan.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphMan.dir/main.cpp.i"
-	C:\Users\andre\Development\minGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\andre\CLionProjects\GraphMan\main.cpp > CMakeFiles\GraphMan.dir\main.cpp.i
+CMakeFiles/GraphMan.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphMan.dir/src/main.cpp.i"
+	C:\Users\andre\Development\minGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\andre\CLionProjects\GraphMan\src\main.cpp > CMakeFiles\GraphMan.dir\src\main.cpp.i
 
-CMakeFiles/GraphMan.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphMan.dir/main.cpp.s"
-	C:\Users\andre\Development\minGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\andre\CLionProjects\GraphMan\main.cpp -o CMakeFiles\GraphMan.dir\main.cpp.s
+CMakeFiles/GraphMan.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphMan.dir/src/main.cpp.s"
+	C:\Users\andre\Development\minGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\andre\CLionProjects\GraphMan\src\main.cpp -o CMakeFiles\GraphMan.dir\src\main.cpp.s
 
 CMakeFiles/GraphMan.dir/src/Graph.cpp.obj: CMakeFiles/GraphMan.dir/flags.make
 CMakeFiles/GraphMan.dir/src/Graph.cpp.obj: ../src/Graph.cpp
@@ -132,7 +132,7 @@ CMakeFiles/GraphMan.dir/src/GraphMan.cpp.s: cmake_force
 
 # Object files for target GraphMan
 GraphMan_OBJECTS = \
-"CMakeFiles/GraphMan.dir/main.cpp.obj" \
+"CMakeFiles/GraphMan.dir/src/main.cpp.obj" \
 "CMakeFiles/GraphMan.dir/src/Graph.cpp.obj" \
 "CMakeFiles/GraphMan.dir/src/Vertex.cpp.obj" \
 "CMakeFiles/GraphMan.dir/src/Edge.cpp.obj" \
@@ -141,7 +141,7 @@ GraphMan_OBJECTS = \
 # External object files for target GraphMan
 GraphMan_EXTERNAL_OBJECTS =
 
-GraphMan.exe: CMakeFiles/GraphMan.dir/main.cpp.obj
+GraphMan.exe: CMakeFiles/GraphMan.dir/src/main.cpp.obj
 GraphMan.exe: CMakeFiles/GraphMan.dir/src/Graph.cpp.obj
 GraphMan.exe: CMakeFiles/GraphMan.dir/src/Vertex.cpp.obj
 GraphMan.exe: CMakeFiles/GraphMan.dir/src/Edge.cpp.obj

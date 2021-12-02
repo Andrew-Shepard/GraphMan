@@ -7,13 +7,43 @@
 
 
 #include <string>
-#include "Vertex.h"
-
+class Vertex;
 class Edge {
     std::string name;
-    Vertex* source;
-    Vertex* destination;
+    Vertex * source = nullptr;
+    Vertex * destination = nullptr;
     uint64_t weight;
+public:
+    uint64_t getWeight() const {
+        return weight;
+    }
+
+    void setWeight(uint64_t weight) {
+        Edge::weight = weight;
+    }
+    Vertex *getDestination() const {
+        return destination;
+    }
+    void setDestination(Vertex *destination) {
+        Edge::destination = destination;
+    }
+    Vertex *getSource() const {
+        return source;
+    }
+    void setSource(Vertex *source) {
+        Edge::source = source;
+    }
+    Edge(Vertex* source, Vertex* destination, uint64_t weight){
+        this->source = source;
+        this->destination = destination;
+        this->weight = weight;
+    }
+    const std::string &getName() const {
+        return name;
+    }
+    void setName(const std::string &name) {
+        Edge::name = name;
+    }
 };
 
 
