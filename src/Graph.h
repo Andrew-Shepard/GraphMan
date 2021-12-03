@@ -15,7 +15,7 @@ public:
     std::vector<Vertex> vertices;
     std::vector<Edge> edges;
     Vertex* getVertex(std::string name);
-    uint64_t getVertexIndex(Vertex vertex);
+    int64_t getVertexIndex(Vertex vertex);
 };
 
 

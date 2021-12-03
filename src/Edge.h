@@ -38,6 +38,7 @@ public:
         this->destination = destination;
         this->weight = weight;
     }
+    Edge(){}
     const std::string &getName() const {
         return name;
     }

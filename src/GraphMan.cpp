@@ -50,37 +50,65 @@ void GraphMan::loadGraph(std::string path){
     graph_file.close();
 }
 
-Graph GraphMan::shortestPath(Vertex origin, Vertex destination){
-    //Dijkstra’s Algorithm
-    //int traversed distance
-    uint64_t traversed_distance = 0;
-    uint64_t origin_index;
+void GraphMan::shortestPath(Vertex origin, Vertex destination){
     //vector of all vertices
-    std::vector<Vertex> vertices = graph.vertices;
+    std::vector<Vertex> vertices;
+    std::vector<Vertex> distance;
+
+    for(int i = 0; i<graph.vertices.size(); i++){
+        vertices.push_back(graph.vertices[i]);
+        distance.push_back(graph.vertices[i]);
+    }
     Vertex focused_vertex = graph.vertices.at(graph.getVertexIndex(origin));
     //vector of visited vertices
-    std::vector<std::string> shortest_path_set(10);
+    std::vector<std::string> shortest_path_set(graph.vertices.size());
     //vector of distances
-    std::vector<uint64_t> shortest_distance_set(10, -1);
-    while (shortest_path_set.size()<vertices.size()){
+    std::vector<uint64_t> shortest_distance_set(graph.vertices.size(), -1);
+    while(vertices.size() > 0){
+        Edge smallest;
+        smallest.setWeight(-1);
         for(int i = 0; i<focused_vertex.edges.size(); i++){
-            //if the edge destination is not in the list
-            std::string destination_name = focused_vertex.edges.at(i)->getDestination()->getName();
-            if( std::find(shortest_path_set.begin(),shortest_path_set.end(),destination_name) != shortest_path_set.end()){
-                shortest_path_set.push_back(focused_vertex.edges.at(i)->getDestination()->getName());
-                shortest_distance_set.push_back(traversed_distance + focused_vertex.edges.at(i)->getWeight());
-            } else {
-                if(traversed_distance + focused_vertex.edges.at(i)->getWeight()){}
+            //if it hasn't been visited and there's a path
+            if (distance[i].getWeight() == -1)
+                distance[i].setWeight(focused_vertex.edges[i]->getWeight());
+            //if this path is shorter than the logged path
+
+            if ( (focused_vertex.edges[i]->getWeight()+focused_vertex.getWeight()) <
+                    distance[getVertexIndex(focused_vertex.edges[i]->getDestination()->getName(),distance)]
+                            .getWeight()){
+                distance[i].setWeight(focused_vertex.getWeight() + focused_vertex.edges[i]->getWeight());
             }
-
+            std::cout << focused_vertex.edges.size();
+            //find the smallest unvisited link
+            if (smallest.getWeight() == -1 || (smallest.getWeight() > focused_vertex.edges[i]->getWeight())){
+                //if it has not been visited yet
+                bool exists_in_vertices = false;
+                for (int j = 0; j < vertices.size(); j++){
+                    if (smallest.getName() == vertices[j].getName())
+                        exists_in_vertices = true;
+                }
+                if (!exists_in_vertices)
+                    smallest = *focused_vertex.edges[i];
+            }
         }
-        //if distance is less than the vertex's previous distance
+        vertices.erase(vertices.begin() + getVertexIndex(focused_vertex.getName(),vertices));
+        shortest_path_set.push_back(focused_vertex.getName());
+        focused_vertex = *smallest.getDestination();
     }
+    std::string path = "";
+    for(int i =0; i<shortest_path_set.size(); i++){
+        path += shortest_path_set[i];
+    }
+    std::cout << "Path: " << path << "Total weight: "
+        << distance[getVertexIndex(destination.getName(),distance)].getWeight();
 
-    //take shortest length of current vertex
-    //if the destination of this edge has not been traversed
-    //add destination to the set
-    //
+}
+uint64_t GraphMan::getVertexIndex(std::string name, std::vector<Vertex> vertices){
+    for(int i = 0; i<vertices.size(); i++){
+        if (vertices[i].getName() == name)
+            return i;
+    }
+    return 0;
 }
 /**
 Vertex GraphMan::breadthFirstSearch(){
@@ -99,4 +127,12 @@ void GraphMan::print(std::ostream &os){
                 " Weight: " + std::to_string(graph.edges[i].getWeight()) +"\n";
         os << edge;
     }
+}
+
+const Graph &GraphMan::getGraph() const {
+    return graph;
+}
+
+void GraphMan::setGraph(const Graph &graph) {
+    GraphMan::graph = graph;
 }
