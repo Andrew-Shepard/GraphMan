@@ -11,9 +11,19 @@
 
 class Edge;
 class Vertex {
-    std::string name;
     int64_t weight = -1;
 public:
+    std::string name;
+    std::string path;
+
+    const std::string &getPath() const {
+        return path;
+    }
+
+    void setPath(const std::string &path) {
+        Vertex::path = path;
+    }
+
     int64_t getWeight() const {
         return weight;
     }
@@ -21,6 +31,11 @@ public:
         Vertex::weight = weight;
     }
     std::vector<Edge*> edges;
+
+    const std::vector<Edge *> &getEdges() const {
+        return edges;
+    }
+
     const std::string &getName() const {
         return name;
     }

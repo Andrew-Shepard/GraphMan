@@ -12,8 +12,8 @@
 
 class Graph {
 public:
-    std::vector<Vertex> vertices;
-    std::vector<Edge> edges;
+    std::vector<Vertex *> vertices;
+    std::vector<Edge *> edges;
     Vertex* getVertex(std::string name);
     int64_t getVertexIndex(Vertex vertex);
 };

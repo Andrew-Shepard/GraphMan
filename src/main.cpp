@@ -3,6 +3,7 @@
 int main() {
     GraphMan gm;
     gm.loadGraph("../input/samplegraph.txt");
-    gm.shortestPath(gm.getGraph().vertices[0].getName(),gm.getGraph().vertices[1].getName());
+    gm.shortestPath(gm.getGraph().vertices[0]->getName(),gm.getGraph().vertices[1]->getName());
+    gm.print(std::cout);
     return 0;
 }
