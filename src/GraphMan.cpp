@@ -34,9 +34,9 @@ void GraphMan::loadGraph(std::string path){
         //handle read line
         // in the case the txt line defines the number of vertices / is a vertex
         if (!std::isdigit(line_contents[0][0])){
-            if (line_contents[2] == ""){
+            if (line_contents[2] == "" && line_contents[0] != ""){
                 graph.vertices.push_back(new Vertex(line_contents[0]));
-            } else { //case where the read line defines an edge object
+            } else if (line_contents[0] != ""){ //case where the read line defines an edge object
                 Vertex *origin = graph.vertices[graph.getVertexIndex(line_contents[0])];
                 Vertex *destination = graph.vertices[graph.getVertexIndex(line_contents[1])];
                 uint64_t weight = stoi(line_contents[2]);
@@ -169,6 +169,7 @@ Vertex GraphMan::depthFirstSearch(Vertex start, std::string search){
             }
         }
     }
+    return start;
 }
 Vertex GraphMan::depthFirstSearch(Vertex start, std::string search, std::vector<Vertex> vq){
     Vertex searched(search);
@@ -194,6 +195,7 @@ Vertex GraphMan::depthFirstSearch(Vertex start, std::string search, std::vector<
             }
         }
     }
+    return start;
 }
 
 Vertex GraphMan::depthFirstSearch(Graph increasing_order){
@@ -219,4 +221,53 @@ const Graph &GraphMan::getGraph() const {
 
 void GraphMan::setGraph(const Graph &graph) {
     GraphMan::graph = graph;
+}
+void GraphMan::displayMenu() {
+    //print the table
+    std::cout << "\tWelcome to FLPoly Simple Graph System.\n"
+            "\t-----------------------------------------------\n"
+            "Please select on one of the following:\n"
+            "[1] Shortest path between two nodes\n"
+            "[2] Print the adjacency list.\n"
+            "[3] Breadth-first search\n"
+            "[4] Depth-first search\n"
+            "[5] Depth-first search with ordered edges\n"
+            "\n"
+            "Enter your selection:" << std::endl;
+    takeMenuInput();
+}
+void GraphMan::takeMenuInput() {
+    uint32_t input_int = 0;
+    double input_double = 0;
+    std::string input_string = "";
+    std::string input_string2 = "";
+    std::cin >> input_int;
+    switch (input_int) {
+        case 1: //Shortest path between two nodes
+            std::cout << "Node 1 name:";
+            std::cin >> input_string;
+            std::cout << "Node 2 name:";
+            std::cin >> input_string2;
+            shortestPath(*graph.getVertex(input_string),*graph.getVertex(input_string2));
+            break;
+        case 2: //Print the adjacency list.
+            std::cout << graph << std::endl;
+            break;
+        case 3: //Breadth-first search
+            std::cout << "Starting node name:";
+            std::cin >> input_string;
+            std::cout << "Search node name:";
+            std::cin >> input_string2;
+            breadthFirstSearch(*graph.getVertex(input_string),input_string2);
+            break;
+        case 4: //Depth-first search
+            std::cout << "Starting node name:";
+            std::cin >> input_string;
+            std::cout << "Search node name:";
+            std::cin >> input_string2;
+            depthFirstSearch(*graph.getVertex(input_string),input_string2);
+            break;
+        case 5: //Depth-first search with ordered edges
+            break;
+    }
 }

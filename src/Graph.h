@@ -9,6 +9,7 @@
 #include <vector>
 #include "Vertex.h"
 #include "Edge.h"
+#include <iostream>
 
 class Graph {
 public:
@@ -16,6 +17,7 @@ public:
     std::vector<Edge *> edges;
     Vertex* getVertex(std::string name);
     int64_t getVertexIndex(Vertex vertex);
+    friend std::ostream& operator<<(std::ostream& os, const Graph& graph);
 };
 
 

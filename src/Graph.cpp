@@ -18,3 +18,13 @@ int64_t Graph::getVertexIndex(Vertex vertex){
     }
     return 0;
 }
+std::ostream& operator<<(std::ostream& os, const Graph& graph){
+    for( int i = 0; i < graph.vertices.size(); i++ ){
+        os << graph.vertices[i]->getName();
+        for ( int j = 0; j < graph.vertices[i]->getEdges().size(); j++ ){
+            os << " -> " << graph.vertices[i]->getEdges()[j]->getDestination()->getName() << "," << graph.vertices[i]->getEdges()[j]->getWeight();
+        }
+        os << std::endl;
+    }
+    return os;
+}

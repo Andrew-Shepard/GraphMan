@@ -23,9 +23,11 @@ public:
 private:
     uint64_t getVertexIndex(std::string name, std::vector<Vertex> vertices);
     Vertex depthFirstSearch(Vertex start, std::string search, std::vector<Vertex> vq);
+    void takeMenuInput();
 public:
     void print(std::ostream &os);
     void loadGraph(std::string path);
+    void displayMenu();
     void shortestPath(Vertex origin, Vertex destination);
     Vertex breadthFirstSearch(Vertex starting_vertex,std::string search);
     Vertex depthFirstSearch(Vertex start, std::string search);

@@ -4,10 +4,11 @@
 int main() {
     GraphMan gm;
     gm.loadGraph("../input/samplegraph.txt");
-    gm.shortestPath(*gm.getGraph().vertices[0],*gm.getGraph().vertices[1]);
-    gm.breadthFirstSearch(*gm.getGraph().vertices[0],"d");
-    std::cout << std::endl;
-    gm.depthFirstSearch(*gm.getGraph().vertices[0],"c");
-    //gm.print(std::cout);
+    uint32_t continue_ = 1;
+    while (continue_ == 1) {
+        gm.displayMenu();
+        std::cout << "Continue? Type 1 " << std::endl;
+        std::cin >> continue_;
+    }
     return 0;
 }
