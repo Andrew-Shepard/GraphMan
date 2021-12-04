@@ -37,8 +37,8 @@ void GraphMan::loadGraph(std::string path){
             if (line_contents[2] == ""){
                 graph.vertices.push_back(new Vertex(line_contents[0]));
             } else { //case where the read line defines an edge object
-                Vertex *origin = graph.getVertex(line_contents[0]);
-                Vertex *destination = graph.getVertex(line_contents[1]);
+                Vertex *origin = graph.vertices[graph.getVertexIndex(line_contents[0])];
+                Vertex *destination = graph.vertices[graph.getVertexIndex(line_contents[1])];
                 uint64_t weight = stoi(line_contents[2]);
                 graph.edges.push_back(new Edge(origin,destination,weight));
                 origin->edges.push_back(new Edge(origin,destination,weight));
@@ -101,7 +101,7 @@ void GraphMan::shortestPath(Vertex origin, Vertex destination){
         focused_vertex.setWeight(focused_vertex.getWeight()+traversed_distance+1);
 
     }
-    std::cout <<"o: " << origin.getName() << " d: " << destination.getName() << " Path: " << distance[getVertexIndex(destination.getName(),distance)].getPath()+destination.getName() << " Total weight: "
+    std::cout << "Path: " << distance[getVertexIndex(destination.getName(),distance)].getPath()+destination.getName() << " Total weight: "
         << distance[getVertexIndex(destination.getName(),distance)].getWeight() << std::endl;
 
 }
@@ -112,10 +112,39 @@ uint64_t GraphMan::getVertexIndex(std::string name, std::vector<Vertex> vertices
     }
     return 0;
 }
-/**
-Vertex GraphMan::breadthFirstSearch(){
 
+Vertex GraphMan::breadthFirstSearch(Vertex starting_vertex,std::string search){
+    int64_t total_vertices = graph.vertices.size();
+    Vertex searched_vertex;
+    searched_vertex.setName(search);
+    VertexQueue vq(total_vertices);
+    VertexQueue order_searched(total_vertices);
+
+    vq.enqueue(starting_vertex);
+    while( vq.size() >= 0 ){
+        for(int i = 0; i < vq.size(); i++){
+            if(vq.first()->getEdges().size() > 0){
+               for (int j = 0; j<vq.first()->getEdges().size(); j++){
+                   if (!order_searched.contains(*vq.first()->getEdges()[j]->getDestination()))
+                        vq.enqueue(*vq.first()->getEdges()[j]->getDestination());
+               }
+            }
+            if(*vq.first() == searched_vertex){
+                std::cout << "Found, order queued with BFS: "<< std::endl;
+                order_searched.print(std::cout);
+                std::cout << searched_vertex.getName() << std::endl;
+                return *vq.first();
+            }
+        }
+        order_searched.enqueue(*vq.first());
+        vq.dequeue();
+    }
+    order_searched.enqueue(*vq.first());
+    std::cout << "Not Found, order queued taken with BFS: "<<std::endl;
+    order_searched.print(std::cout);
+    return starting_vertex;
 }
+/**
 Vertex GraphMan::depthFirstSearch(){
 
 }

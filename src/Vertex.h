@@ -8,6 +8,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Edge;
 class Vertex {
@@ -15,38 +16,33 @@ class Vertex {
 public:
     std::string name;
     std::string path;
-
-    const std::string &getPath() const {
-        return path;
-    }
-
-    void setPath(const std::string &path) {
-        Vertex::path = path;
-    }
-
-    int64_t getWeight() const {
-        return weight;
-    }
-    void setWeight(int64_t weight) {
-        Vertex::weight = weight;
-    }
     std::vector<Edge*> edges;
-
-    const std::vector<Edge *> &getEdges() const {
-        return edges;
-    }
-
-    const std::string &getName() const {
-        return name;
-    }
-
-    void setName(const std::string &name) {
-        Vertex::name = name;
-    }
-
+    friend std::ostream &operator<<(std::ostream &os, const Vertex &vertex);
+    bool operator == (const Vertex &vertex) const {return name == vertex.name;}
+    bool operator != (const Vertex &vertex) const {return !(*this==vertex);}
     Vertex(std::string name){
         this->name = name;
     }
+    Vertex(){}
+
+    int64_t getWeight() const;
+
+    void setWeight(int64_t weight);
+
+    const std::string &getName() const;
+
+    void setName(const std::string &name);
+
+    const std::string &getPath() const;
+
+    void setPath(const std::string &path);
+
+    const std::vector<Edge *> &getEdges() const;
+
+    void setEdges(const std::vector<Edge *> &edges);
+
+
+
 };
 
 

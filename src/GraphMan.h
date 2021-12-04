@@ -10,6 +10,7 @@
 #include "Vertex.h"
 #include "Graph.h"
 #include "Edge.h"
+#include "VectexQueue.h"
 
 class GraphMan {
     Graph graph;
@@ -24,7 +25,7 @@ public:
     void print(std::ostream &os);
     void loadGraph(std::string path);
     void shortestPath(Vertex origin, Vertex destination);
-    Vertex breadthFirstSearch();
+    Vertex breadthFirstSearch(Vertex starting_vertex,std::string search);
     Vertex depthFirstSearch();
     Vertex depthFirstSearch(Graph increasing_order);
 };

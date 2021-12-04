@@ -41,10 +41,20 @@ Graph.h
 C:/Users/andre/CLionProjects/GraphMan/src/Graph.h
 Edge.h
 C:/Users/andre/CLionProjects/GraphMan/src/Edge.h
+VectexQueue.h
+C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h
+
+C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h
+iostream
+-
+vector
+-
 
 C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h
 string
 -
 vector
+-
+iostream
 -
 
