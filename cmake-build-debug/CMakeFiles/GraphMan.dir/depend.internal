@@ -14,6 +14,7 @@ CMakeFiles/GraphMan.dir/src/GraphMan.cpp.obj
  C:/Users/andre/CLionProjects/GraphMan/src/Graph.h
  C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.cpp
  C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.h
+ C:/Users/andre/CLionProjects/GraphMan/src/Stack.h
  C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h
  C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h
 CMakeFiles/GraphMan.dir/src/Vertex.cpp.obj
@@ -23,6 +24,7 @@ CMakeFiles/GraphMan.dir/src/main.cpp.obj
  C:/Users/andre/CLionProjects/GraphMan/src/Edge.h
  C:/Users/andre/CLionProjects/GraphMan/src/Graph.h
  C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.h
+ C:/Users/andre/CLionProjects/GraphMan/src/Stack.h
  C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h
  C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h
  C:/Users/andre/CLionProjects/GraphMan/src/main.cpp

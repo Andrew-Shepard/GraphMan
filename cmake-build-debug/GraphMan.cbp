@@ -98,6 +98,9 @@
 		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.h">
 			<Option target="GraphMan"/>
 		</Unit>
+		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/src/Stack.h">
+			<Option target="GraphMan"/>
+		</Unit>
 		<Unit filename="C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h">
 			<Option target="GraphMan"/>
 		</Unit>

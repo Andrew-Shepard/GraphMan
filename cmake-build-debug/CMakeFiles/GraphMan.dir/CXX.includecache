@@ -18,20 +18,6 @@ C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h
 Edge.h
 C:/Users/andre/CLionProjects/GraphMan/src/Edge.h
 
-C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.cpp
-GraphMan.h
-C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.h
-iostream
--
-fstream
--
-cctype
--
-algorithm
--
-map
--
-
 C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.h
 vector
 -
@@ -43,6 +29,14 @@ Edge.h
 C:/Users/andre/CLionProjects/GraphMan/src/Edge.h
 VectexQueue.h
 C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h
+Stack.h
+C:/Users/andre/CLionProjects/GraphMan/src/Stack.h
+
+C:/Users/andre/CLionProjects/GraphMan/src/Stack.h
+iostream
+-
+Vertex.h
+C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h
 
 C:/Users/andre/CLionProjects/GraphMan/src/VectexQueue.h
 iostream
@@ -57,4 +51,12 @@ vector
 -
 iostream
 -
+
+C:/Users/andre/CLionProjects/GraphMan/src/main.cpp
+iostream
+-
+GraphMan.h
+C:/Users/andre/CLionProjects/GraphMan/src/GraphMan.h
+Vertex.h
+C:/Users/andre/CLionProjects/GraphMan/src/Vertex.h
 

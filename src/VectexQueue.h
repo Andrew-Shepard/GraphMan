@@ -26,12 +26,23 @@ public:
         first_in_queue = last = queue;
     }
     bool contains(Vertex data){
-        for(int i = 0; i<elements->size(); i++){
-            if (last[i] == data){
+        Vertex *p = first_in_queue;
+        for(int i = 0; i<length; i++){
+            if (*p == data){
                 return true;
             }
+            p++;
         }
         return false;
+    }
+    uint64_t count(Vertex data){
+        uint64_t count = 0;
+        for(int i = 0; i<length; i++){
+            if (last[i] == data){
+                count++;
+            }
+        }
+        return count;
     }
     void enqueue(Vertex data) {
         if (length == capacity){

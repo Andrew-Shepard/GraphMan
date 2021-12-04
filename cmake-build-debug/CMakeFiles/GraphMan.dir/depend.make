@@ -14,6 +14,7 @@ CMakeFiles/GraphMan.dir/src/GraphMan.cpp.obj: \
  ../src/Graph.h \
  ../src/GraphMan.cpp \
  ../src/GraphMan.h \
+ ../src/Stack.h \
  ../src/VectexQueue.h \
  ../src/Vertex.h
 CMakeFiles/GraphMan.dir/src/Vertex.cpp.obj: \
@@ -23,6 +24,7 @@ CMakeFiles/GraphMan.dir/src/main.cpp.obj: \
  ../src/Edge.h \
  ../src/Graph.h \
  ../src/GraphMan.h \
+ ../src/Stack.h \
  ../src/VectexQueue.h \
  ../src/Vertex.h \
  ../src/main.cpp

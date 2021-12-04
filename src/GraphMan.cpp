@@ -144,13 +144,61 @@ Vertex GraphMan::breadthFirstSearch(Vertex starting_vertex,std::string search){
     order_searched.print(std::cout);
     return starting_vertex;
 }
-/**
-Vertex GraphMan::depthFirstSearch(){
 
+Vertex GraphMan::depthFirstSearch(Vertex start, std::string search){
+    Vertex searched(search);
+    bool not_visited = true;
+    std::vector<Vertex> visited(graph.vertices.size());
+    std::cout << start.getName() << std::endl;
+    //until everything is visited
+    if(start == searched){
+        std::cout << 131241231 << std::endl;
+        return searched;
+    }
+    if (start.getEdges().size() > 0){
+        for (int i = 0; i < start.getEdges().size(); i++){
+            //if it has not been visited
+            not_visited = true;
+            for(int j = 0; j<visited.size(); j++){
+                if (*start.edges[i]->getDestination() == visited[j])
+                    not_visited = false;
+            }
+            if(not_visited){
+                visited.push_back(*start.edges[i]->getDestination());
+                return depthFirstSearch(*start.edges[i]->getDestination(),search, visited);
+            }
+        }
+    }
 }
+Vertex GraphMan::depthFirstSearch(Vertex start, std::string search, std::vector<Vertex> vq){
+    Vertex searched(search);
+    bool not_visited = true;
+    std::vector<Vertex> visited = vq;
+    std::cout << start.getName() << std::endl;
+    //until everything is visited
+    if(start == searched){
+        std::cout << "Found: " << start.getName();
+        return searched;
+    }
+    if (start.getEdges().size() > 0){
+        for (int i = 0; i < start.getEdges().size(); i++){
+            //if it has not been visited
+            not_visited = true;
+            for(int j = 0; j<visited.size(); j++){
+                if (*start.edges[i]->getDestination() == visited[j])
+                    not_visited = false;
+            }
+            if(not_visited){
+                visited.push_back(*start.edges[i]->getDestination());
+                return depthFirstSearch(*start.edges[i]->getDestination(),search, visited);
+            }
+        }
+    }
+}
+
 Vertex GraphMan::depthFirstSearch(Graph increasing_order){
 
-}**/
+}
 void GraphMan::print(std::ostream &os){
     std::string vertex = "";
     std::string edge = "";

@@ -11,6 +11,7 @@
 #include "Graph.h"
 #include "Edge.h"
 #include "VectexQueue.h"
+#include "Stack.h"
 
 class GraphMan {
     Graph graph;
@@ -21,12 +22,13 @@ public:
 
 private:
     uint64_t getVertexIndex(std::string name, std::vector<Vertex> vertices);
+    Vertex depthFirstSearch(Vertex start, std::string search, std::vector<Vertex> vq);
 public:
     void print(std::ostream &os);
     void loadGraph(std::string path);
     void shortestPath(Vertex origin, Vertex destination);
     Vertex breadthFirstSearch(Vertex starting_vertex,std::string search);
-    Vertex depthFirstSearch();
+    Vertex depthFirstSearch(Vertex start, std::string search);
     Vertex depthFirstSearch(Graph increasing_order);
 };
 
