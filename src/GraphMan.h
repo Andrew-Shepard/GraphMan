@@ -21,8 +21,11 @@ public:
     void setGraph(const Graph &graph);
 
 private:
+    void swap(Edge *xv, Edge *yv);
+    void bubbleSortEdges(std::vector<Edge*> edges);
     uint64_t getVertexIndex(std::string name, std::vector<Vertex> vertices);
     Vertex depthFirstSearch(Vertex start, std::string search, std::vector<Vertex> vq);
+    Vertex depthFirstSearchIncreasing(Vertex start, std::string search, std::vector<Vertex> vq);
     void takeMenuInput();
 public:
     void print(std::ostream &os);
@@ -31,7 +34,7 @@ public:
     void shortestPath(Vertex origin, Vertex destination);
     Vertex breadthFirstSearch(Vertex starting_vertex,std::string search);
     Vertex depthFirstSearch(Vertex start, std::string search);
-    Vertex depthFirstSearch(Graph increasing_order);
+    Vertex depthFirstSearchIncreasing(Vertex start, std::string search);
 };
 
 

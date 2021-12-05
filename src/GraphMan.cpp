@@ -149,10 +149,11 @@ Vertex GraphMan::depthFirstSearch(Vertex start, std::string search){
     Vertex searched(search);
     bool not_visited = true;
     std::vector<Vertex> visited(graph.vertices.size());
+    visited.push_back(start);
     std::cout << start.getName() << std::endl;
     //until everything is visited
     if(start == searched){
-        std::cout << 131241231 << std::endl;
+        std::cout << "Found: " << start.getName() << std::endl;;
         return searched;
     }
     if (start.getEdges().size() > 0){
@@ -178,7 +179,7 @@ Vertex GraphMan::depthFirstSearch(Vertex start, std::string search, std::vector<
     std::cout << start.getName() << std::endl;
     //until everything is visited
     if(start == searched){
-        std::cout << "Found: " << start.getName();
+        std::cout << "Found: " << start.getName() << std::endl;;
         return searched;
     }
     if (start.getEdges().size() > 0){
@@ -198,8 +199,70 @@ Vertex GraphMan::depthFirstSearch(Vertex start, std::string search, std::vector<
     return start;
 }
 
-Vertex GraphMan::depthFirstSearch(Graph increasing_order){
-
+Vertex GraphMan::depthFirstSearchIncreasing(Vertex start, std::string search){
+    Vertex searched(search);
+    bool not_visited = true;
+    std::vector<Vertex> visited(graph.vertices.size());
+    std::vector<Vertex> search_queue(graph.vertices.size());
+    visited.push_back(start);
+    std::cout << start.getName() << std::endl;
+    //until everything is visited
+    if(start == searched){
+        std::cout << "Found: " << start.getName() << std::endl;
+        return searched;
+    }
+    bubbleSortEdges(start.edges);
+    if (start.getEdges().size() > 0){
+        for (int i = 0; i < start.getEdges().size(); i++){
+            //if it has not been visited
+            not_visited = true;
+            for(int j = 0; j<visited.size(); j++){
+                if (*start.edges[i]->getDestination() == visited[j]){
+                    not_visited = false;
+                }
+            }
+            if(not_visited){
+                return depthFirstSearch(*start.edges[i]->getDestination(),search, visited);
+            }
+        }
+    }
+    std::cout << "Path not found" << std::endl;
+    return start;
+}
+Vertex GraphMan::depthFirstSearchIncreasing(Vertex start, std::string search, std::vector<Vertex> vq){
+    Vertex searched(search);
+    bool not_visited = true;
+    std::vector<Vertex> visited(graph.vertices.size());
+    std::vector<Vertex> search_queue(graph.vertices.size());
+    std::cout << start.getName() << std::endl;
+    //until everything is visited
+    if(start == searched){
+        std::cout << "Found: " << start.getName() << std::endl;;
+        return searched;
+    }
+    bubbleSortEdges(start.edges);
+    if (start.getEdges().size() > 0){
+        for (int i = 0; i < start.getEdges().size(); i++){
+            //if it has not been visited
+            not_visited = true;
+            for(int j = 0; j<visited.size(); j++){
+                if (*start.edges[i]->getDestination() == visited[j]){
+                    not_visited = false;
+                }
+            }
+            if(not_visited){
+                Vertex next = *start.edges[0]->getDestination();
+                for(int k = 1; k<search_queue.size(); k++){
+                    if(next.getWeight() > search_queue.at(k).getWeight())
+                        next = search_queue.at(k);
+                }
+                visited.push_back(next);
+                return depthFirstSearch(next,search, visited);
+            }
+        }
+    }
+    std::cout << "Path not found" << std::endl;
+    return start;
 }
 void GraphMan::print(std::ostream &os){
     std::string vertex = "";
@@ -268,6 +331,33 @@ void GraphMan::takeMenuInput() {
             depthFirstSearch(*graph.getVertex(input_string),input_string2);
             break;
         case 5: //Depth-first search with ordered edges
+            std::cout << "Starting node name:";
+            std::cin >> input_string;
+            std::cout << "Search node name:";
+            std::cin >> input_string2;
+            depthFirstSearchIncreasing(*graph.getVertex(input_string),input_string2);
+            break;
+            break;
+    }
+}
+void GraphMan::swap(Edge *xv, Edge *yv){
+    Edge temp = *xv;
+    *xv = *yv;
+    *yv = temp;
+}
+void GraphMan::bubbleSortEdges(std::vector<Edge*> edges) {
+    int i, j;
+    int n = edges.size();
+    bool swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (edges[j]->getDestination()->edges.size() > edges[j + 1]->getDestination()->edges.size()) {
+                swap(edges[j], edges[j + 1]);
+                swapped = true;
+            }
+        }
+        if (swapped == false)
             break;
     }
 }
